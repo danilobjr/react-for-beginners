@@ -5,12 +5,14 @@ class TodoList extends Component {
     render() {
         return (
             <ul className="todo-list">
-                <TodoItem />
-                <TodoItem />
-                <TodoItem />
-                <TodoItem />
-                <TodoItem />
+                {this.renderTodoItems()}
             </ul>
+        );
+    }
+
+    renderTodoItems() {
+        return this.props.todos.map(todo => 
+            <TodoItem />
         );
     }
 }
