@@ -26,7 +26,7 @@ module.exports = {
         ]
     },
     resolve: {
-        extentions: ['', '.webpack.js', '.web.js', '.js', '.jsx'],
+        extensions: ['', '.webpack.js', '.web.js', '.js', '.jsx', '.css'],
         // alias - todo
     }
 };
