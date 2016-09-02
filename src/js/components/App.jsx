@@ -20,7 +20,7 @@ class App extends React.Component {
 
     render() {
         return (
-            <ul>
+            <ul className="todo-list">
                 {this.renderTodos()}
             </ul>
         );
@@ -28,8 +28,8 @@ class App extends React.Component {
 
     renderTodos() {
         return this.todos.map(todo =>
-            <li key={todo.id}>
-                <input type="checkbox" onClick={(e) => this.completeTodo(todo.id, e)}/>
+            <li key={todo.id} className={todo.completed ? 'completed' : ''}>
+                <input className="toggle" type="checkbox" checked={todo.completed} onClick={(e) => this.completeTodo(todo.id, e)}/>
                 <label>{todo.description}</label>
             </li>
         );
