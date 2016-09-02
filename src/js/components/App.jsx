@@ -28,20 +28,6 @@ class App extends React.Component {
         );
     }
 
-    renderTodos() {
-        return this.state.todos.map(todo =>
-            <li key={todo.id} className={classNames({ completed: todo.completed })}>
-                <input
-                    className="toggle"
-                    type="checkbox"
-                    checked={todo.completed}
-                    onChange={(e) => this.completeTodo(todo.id, e)}
-                />
-                <label>{todo.description}</label>
-            </li>
-        );
-    }
-
     completeTodo(todoId, e) {
         let { todos } = this.state;
         const completed = e.target.checked;
