@@ -5,18 +5,20 @@ class App extends React.Component {
     constructor() {
         super();
 
-        this.todos = [
-            {
-                id: 1,
-                description: 'talk to John',
-                completed: false
-            },
-            { 
-                id: 2,
-                description: 'buy some fruits',
-                completed: true
-            }
-        ]
+        this.state = {
+            todos: [
+                {
+                    id: 1,
+                    description: 'talk to John',
+                    completed: false
+                },
+                { 
+                    id: 2,
+                    description: 'buy some fruits',
+                    completed: true
+                }
+            ]
+        };
     }
 
     render() {
@@ -28,7 +30,7 @@ class App extends React.Component {
     }
 
     renderTodos() {
-        return this.todos.map(todo =>
+        return this.state.todos.map(todo =>
             <li key={todo.id} className={classNames({ completed: todo.completed })}>
                 <input
                     className="toggle"
@@ -42,13 +44,13 @@ class App extends React.Component {
     }
 
     completeTodo(todoId, e) {
-        let todos = this.todos;
+        let { todos } = this.state;
         const completed = e.target.checked;
 
         const todoToModify = todos.find(todo => todo.id === todoId);
         todoToModify.completed = completed;
 
-        console.log(todos);
+        console.log(todoToModify);
     }
 }
 
