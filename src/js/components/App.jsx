@@ -28,7 +28,7 @@ class App extends React.Component {
 
     renderTodos() {
         return this.todos.map(todo =>
-            <li>{todo.description}</li>
+            <li key={todo.id}>{todo.description}</li>
         );
     }
 }
