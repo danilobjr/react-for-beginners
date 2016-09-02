@@ -29,14 +29,14 @@ class App extends React.Component {
     renderTodos() {
         return this.todos.map(todo =>
             <li key={todo.id}>
-                <input type="checkbox" onClick={this.completeTodo}/>
+                <input type="checkbox" onClick={(e) => this.completeTodo(todo.id, e)}/>
                 <label>{todo.description}</label>
             </li>
         );
     }
 
-    completeTodo(e) {
-        console.log(e.target.checked);
+    completeTodo(todoId, e) {
+        console.log(todoId, e.target.checked);
     }
 }
 
