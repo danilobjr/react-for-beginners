@@ -50,7 +50,7 @@ class App extends React.Component {
         const todoToModify = todos.find(todo => todo.id === todoId);
         todoToModify.completed = completed;
 
-        console.log(todoToModify);
+        this.setState({ todos });
     }
 }
 
