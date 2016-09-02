@@ -21,9 +21,9 @@ class App extends React.Component {
     render() {
         return (
             <ul>
-                <li>{this.todos[0].description}</li>
-                {/* I use { ...  } to put some raw JS inner JSX */}
-                <li>{`I need to ${this.todos[1].description}`}</li>
+                {this.todos.map(todo =>
+                    <li>{todo.description}</li>
+                )}
             </ul>
         );
     }
