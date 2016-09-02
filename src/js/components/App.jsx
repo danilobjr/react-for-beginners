@@ -1,4 +1,5 @@
 import React from 'react'
+import { TodoList } from './TodoList'
 import classNames from 'classnames'
 
 class App extends React.Component {
@@ -23,9 +24,7 @@ class App extends React.Component {
 
     render() {
         return (
-            <ul className="todo-list">
-                {this.renderTodos()}
-            </ul>
+            <TodoList />
         );
     }
 
