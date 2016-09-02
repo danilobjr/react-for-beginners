@@ -4,7 +4,7 @@
   "description": "App built on React for Beginners series on JS Channel, on YouTube.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack-dev-server --content-base build --inline"
   },
   "repository": {
     "type": "git",
