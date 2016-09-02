@@ -21,10 +21,14 @@ class App extends React.Component {
     render() {
         return (
             <ul>
-                {this.todos.map(todo =>
-                    <li>{todo.description}</li>
-                )}
+                {this.renderTodos()}
             </ul>
+        );
+    }
+
+    renderTodos() {
+        return this.todos.map(todo =>
+            <li>{todo.description}</li>
         );
     }
 }
