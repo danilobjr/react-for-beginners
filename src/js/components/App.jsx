@@ -42,7 +42,13 @@ class App extends React.Component {
     }
 
     completeTodo(todoId, e) {
-        console.log(todoId, e.target.checked);
+        let todos = this.todos;
+        const completed = e.target.checked;
+
+        const todoToModify = todos.find(todo => todo.id === todoId);
+        todoToModify.completed = completed;
+
+        console.log(todos);
     }
 }
 
