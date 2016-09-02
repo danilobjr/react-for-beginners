@@ -3,7 +3,7 @@ const path = require('path');
 const resolvePath = value => path.resolve(__dirname, value)
 
 module.exports = {
-    entry: resolvePath('src/js/index.jsx'),
+    entry: resolvePath('src/index.jsx'),
     output: {
         path: resolvePath('build'),
         filename: 'bundle.js'
@@ -12,7 +12,7 @@ module.exports = {
         loaders: [
             {
                 test: /\.jsx?$/,
-                include: [resolvePath('src/js')],
+                include: [resolvePath('src')],
                 loader: 'babel',
                 query: {
                     presets: ['es2015', 'react']
