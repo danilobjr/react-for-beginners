@@ -1,4 +1,5 @@
 import React from 'react'
+import classNames from 'classnames'
 
 class App extends React.Component {
     constructor() {
@@ -28,7 +29,7 @@ class App extends React.Component {
 
     renderTodos() {
         return this.todos.map(todo =>
-            <li key={todo.id} className={todo.completed ? 'completed' : ''}>
+            <li key={todo.id} className={classNames({ completed: todo.completed })}>
                 <input className="toggle" type="checkbox" checked={todo.completed} onClick={(e) => this.completeTodo(todo.id, e)}/>
                 <label>{todo.description}</label>
             </li>
