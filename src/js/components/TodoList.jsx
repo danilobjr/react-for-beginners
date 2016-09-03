@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 import { TodoItem } from './TodoItem'
 
 class TodoList extends Component {
@@ -16,6 +16,14 @@ class TodoList extends Component {
         );
     }
 }
+
+TodoList.propTypes = {
+    todos: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.number,
+        description: PropTypes.string,
+        completed: PropTypes.bool
+    }))
+};
 
 export {
     TodoList
