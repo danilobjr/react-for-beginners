@@ -21,7 +21,7 @@ TodoList.propTypes = {
     todos: PropTypes.arrayOf(PropTypes.shape({
         id: PropTypes.number,
         description: PropTypes.string,
-        completed: PropTypes.bool
+        completed: PropTypes.string
     }))
 };
 
