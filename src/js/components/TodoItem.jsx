@@ -1,30 +1,29 @@
 import React, { Component, PropTypes } from 'react'
 
-class TodoItem extends Component {
-    render() {
-        const { todo } = this.props;
+const getLiCssClasses = props =>
+    props.todo.completed ? 'completed' : ''
 
-        const liCssClasses = todo.completed ? 'completed' : '';
+const TodoItem = props => {
+    const { description, completed } = props;
 
-        return (
-            <li className={liCssClasses}>
-                <input
-                    className="toggle"
-                    type="checkbox"
-                    checked={todo.completed}
-                    onChange={this.handleOnChange.bind(this)}
-                />
-                <label>{todo.description}</label>
-            </li>
-        );
-    }
+    return (
+        <li className={getLiCssClasses(props)}>
+            <input
+                className="toggle"
+                type="checkbox"
+                checked={props.todo.completed}
+                onChange={(e) => handleOnChange(e, props)}
+            />
+            <label>{props.todo.description}</label>
+        </li>
+    );
+}
 
-    handleOnChange(e) {
-        const { todo, onCompleteTodo } = this.props;
-        const completed = e.target.checked;
+const handleOnChange = (e, props) => {
+    const { todo, onCompleteTodo } = props;
+    const completed = e.target.checked;
 
-        onCompleteTodo(todo.id, completed);
-    }
+    onCompleteTodo(todo.id, completed);
 }
 
 TodoItem.propTypes = {
