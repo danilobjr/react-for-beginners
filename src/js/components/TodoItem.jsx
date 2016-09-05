@@ -15,6 +15,7 @@ const TodoItem = props => {
                 onChange={(e) => handleOnChange(e, props)}
             />
             <label>{props.todo.description}</label>
+            <button className="destroy"></button>
         </li>
     );
 }
