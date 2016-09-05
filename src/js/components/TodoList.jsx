@@ -11,7 +11,7 @@ const renderTodoItems = (props) =>
         <TodoItem
             key={todo.id}
             todo={todo}
-            onCompleteTodo={props.onCompleteTodo} 
+            onToggleCheckbox={props.onToggleCheckbox} 
         />
     )
 
@@ -21,7 +21,7 @@ TodoList.propTypes = {
         description: PropTypes.string,
         completed: PropTypes.bool
     })),
-    onCompleteTodo: PropTypes.func.isRequired
+    onToggleCheckbox: PropTypes.func.isRequired
 };
 
 export {

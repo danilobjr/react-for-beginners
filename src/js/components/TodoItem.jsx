@@ -20,10 +20,10 @@ const TodoItem = props => {
 }
 
 const handleOnChange = (e, props) => {
-    const { todo, onCompleteTodo } = props;
+    const { todo, onToggleCheckbox } = props;
     const completed = e.target.checked;
 
-    onCompleteTodo(todo.id, completed);
+    onToggleCheckbox(todo.id, completed);
 }
 
 TodoItem.propTypes = {
@@ -32,7 +32,7 @@ TodoItem.propTypes = {
         description: PropTypes.string,
         completed: PropTypes.bool
     }),
-    onCompleteTodo: PropTypes.func.isRequired
+    onToggleCheckbox: PropTypes.func.isRequired
 };
 
 export {

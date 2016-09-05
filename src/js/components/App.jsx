@@ -26,7 +26,7 @@ class App extends React.Component {
         return (
             <TodoList
                 todos={this.state.todos}
-                onCompleteTodo={this.completeTodo.bind(this)} 
+                onToggleCheckbox={this.completeTodo.bind(this)} 
             />
         );
     }
