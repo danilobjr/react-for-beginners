@@ -42,7 +42,12 @@ class App extends React.Component {
     }
 
     onClickRemoveIcon(id) {
-        console.log(`remove todo ${id}`);
+        let { todos } = this.state;
+
+        const index = todos.findIndex(todo => todo.id === id);
+        todos.splice(index, 1);
+
+        this.setState({ todos });
     }
 }
 
