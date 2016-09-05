@@ -1,41 +1,44 @@
 import React, { Component, PropTypes } from 'react'
 
-const getLiCssClasses = props =>
-    props.todo.completed ? 'completed' : ''
+class TodoItem extends Component {
+    render() {
+        const { todo } = this.props;
 
-const TodoItem = props => {
-    const { description, completed } = props;
+        return (
+            <li className={this.getLiCssClasses.bind(this)}>
+                <div className="view" onDoubleClick={() => console.log('double click')}>
+                    <input
+                        className="toggle"
+                        type="checkbox"
+                        checked={todo.completed}
+                        onChange={this.handleOnChange.bind(this)}
+                    />
+                    <label>{todo.description}</label>
+                    <button
+                        className="destroy"
+                        onClick={this.handleOnClickRemoveIcon.bind(this)}
+                    ></button>
+                </div>
+            </li>
+        );
+    }
 
-    return (
-        <li className={getLiCssClasses(props)}>
-            <div className="view" onDoubleClick={() => console.log('double click')}>
-                <input
-                    className="toggle"
-                    type="checkbox"
-                    checked={props.todo.completed}
-                    onChange={(e) => handleOnChange(e, props)}
-                />
-                <label>{props.todo.description}</label>
-                <button
-                    className="destroy"
-                    onClick={() => handleOnClickRemoveIcon(props)}
-                ></button>
-            </div>
-        </li>
-    );
-}
+    getLiCssClasses() {
+        return this.props.todo.completed ? 'completed' : '';
+    }
 
-const handleOnChange = (e, props) => {
-    const { todo, onToggleCheckbox } = props;
-    const completed = e.target.checked;
+    handleOnChange(e) {
+        const { todo, onToggleCheckbox } = this.props;
+        const completed = e.target.checked;
 
-    onToggleCheckbox(todo.id, completed);
-}
+        onToggleCheckbox(todo.id, completed);
+    }
 
-const handleOnClickRemoveIcon = props => {
-    const { todo, onClickRemoveIcon } = props;
+    handleOnClickRemoveIcon() {
+        const { todo, onClickRemoveIcon } = this.props;
 
-    onClickRemoveIcon(todo.id);
+        onClickRemoveIcon(todo.id);
+    }
 }
 
 TodoItem.propTypes = {
