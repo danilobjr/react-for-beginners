@@ -8,17 +8,19 @@ const TodoItem = props => {
 
     return (
         <li className={getLiCssClasses(props)}>
-            <input
-                className="toggle"
-                type="checkbox"
-                checked={props.todo.completed}
-                onChange={(e) => handleOnChange(e, props)}
-            />
-            <label>{props.todo.description}</label>
-            <button
-                className="destroy"
-                onClick={() => handleOnClickRemoveIcon(props)}
-            ></button>
+            <div className="view" onDoubleClick={() => console.log('double click')}>
+                <input
+                    className="toggle"
+                    type="checkbox"
+                    checked={props.todo.completed}
+                    onChange={(e) => handleOnChange(e, props)}
+                />
+                <label>{props.todo.description}</label>
+                <button
+                    className="destroy"
+                    onClick={() => handleOnClickRemoveIcon(props)}
+                ></button>
+            </div>
         </li>
     );
 }
