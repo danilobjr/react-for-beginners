@@ -15,7 +15,10 @@ const TodoItem = props => {
                 onChange={(e) => handleOnChange(e, props)}
             />
             <label>{props.todo.description}</label>
-            <button className="destroy"></button>
+            <button
+                className="destroy"
+                onClick={props.onClickRemoveIcon}
+            ></button>
         </li>
     );
 }
@@ -33,7 +36,8 @@ TodoItem.propTypes = {
         description: PropTypes.string,
         completed: PropTypes.bool
     }),
-    onToggleCheckbox: PropTypes.func.isRequired
+    onToggleCheckbox: PropTypes.func.isRequired,
+    onClickRemoveIcon: PropTypes.func.isRequired
 };
 
 export {
