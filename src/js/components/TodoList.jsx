@@ -12,7 +12,11 @@ class TodoList extends Component {
 
     renderTodoItems() {
         return this.props.todos.map(todo => 
-            <TodoItem key={todo.id} todo={todo} />
+            <TodoItem
+                key={todo.id}
+                todo={todo}
+                onCompleteTodo={this.props.onCompleteTodo} 
+            />
         );
     }
 }
@@ -22,7 +26,8 @@ TodoList.propTypes = {
         id: PropTypes.number,
         description: PropTypes.string,
         completed: PropTypes.bool
-    }))
+    })),
+    onCompleteTodo: PropTypes.func.isRequired
 };
 
 export {

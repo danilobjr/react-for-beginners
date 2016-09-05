@@ -24,15 +24,17 @@ class App extends React.Component {
 
     render() {
         return (
-            <TodoList todos={this.state.todos} />
+            <TodoList
+                todos={this.state.todos}
+                onCompleteTodo={this.completeTodo.bind(this)} 
+            />
         );
     }
 
-    completeTodo(todoId, e) {
+    completeTodo(id, completed) {
         let { todos } = this.state;
-        const completed = e.target.checked;
 
-        const todoToModify = todos.find(todo => todo.id === todoId);
+        const todoToModify = todos.find(todo => todo.id === id);
         todoToModify.completed = completed;
 
         this.setState({ todos });

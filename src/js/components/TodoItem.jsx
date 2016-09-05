@@ -12,11 +12,18 @@ class TodoItem extends Component {
                     className="toggle"
                     type="checkbox"
                     checked={todo.completed}
-                    onChange={(e) => console.log('todo changed')}
+                    onChange={this.handleOnChange.bind(this)}
                 />
                 <label>{todo.description}</label>
             </li>
         );
+    }
+
+    handleOnChange(e) {
+        const { todo, onCompleteTodo } = this.props;
+        const completed = e.target.checked;
+
+        onCompleteTodo(todo.id, completed);
     }
 }
 
@@ -25,7 +32,8 @@ TodoItem.propTypes = {
         id: PropTypes.number,
         description: PropTypes.string,
         completed: PropTypes.bool
-    })
+    }),
+    onCompleteTodo: PropTypes.func.isRequired
 };
 
 export {
