@@ -17,7 +17,7 @@ const TodoItem = props => {
             <label>{props.todo.description}</label>
             <button
                 className="destroy"
-                onClick={props.onClickRemoveIcon}
+                onClick={() => handleOnClickRemoveIcon(props)}
             ></button>
         </li>
     );
@@ -28,6 +28,12 @@ const handleOnChange = (e, props) => {
     const completed = e.target.checked;
 
     onToggleCheckbox(todo.id, completed);
+}
+
+const handleOnClickRemoveIcon = props => {
+    const { todo, onClickRemoveIcon } = props;
+
+    onClickRemoveIcon(todo.id);
 }
 
 TodoItem.propTypes = {

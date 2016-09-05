@@ -41,8 +41,8 @@ class App extends React.Component {
         this.setState({ todos });
     }
 
-    onClickRemoveIcon() {
-        console.log(`remove todo`);
+    onClickRemoveIcon(id) {
+        console.log(`remove todo ${id}`);
     }
 }
 
