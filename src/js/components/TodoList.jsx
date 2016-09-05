@@ -1,25 +1,19 @@
 import React, { Component, PropTypes } from 'react'
 import { TodoItem } from './TodoItem'
 
-class TodoList extends Component {
-    render() {
-        return (
-            <ul className="todo-list">
-                {this.renderTodoItems()}
-            </ul>
-        );
-    }
+const TodoList = props =>
+    <ul className="todo-list">
+        {renderTodoItems(props)}
+    </ul>
 
-    renderTodoItems() {
-        return this.props.todos.map(todo => 
-            <TodoItem
-                key={todo.id}
-                todo={todo}
-                onCompleteTodo={this.props.onCompleteTodo} 
-            />
-        );
-    }
-}
+const renderTodoItems = (props) =>
+    props.todos.map(todo => 
+        <TodoItem
+            key={todo.id}
+            todo={todo}
+            onCompleteTodo={props.onCompleteTodo} 
+        />
+    )
 
 TodoList.propTypes = {
     todos: PropTypes.arrayOf(PropTypes.shape({
