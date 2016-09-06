@@ -31,6 +31,7 @@ class TodoItem extends Component {
                 defaultValue={todo.description}
                 autoFocus
                 onKeyUp={this.handleKeyUp.bind(this)} 
+                onBlur={this.handleOnBlur.bind(this)}
               />
             : (
                 <div onDoubleClick={() => this.setEditionMode(true)}>
@@ -53,6 +54,10 @@ class TodoItem extends Component {
         if (e.keyCode === 27) {
             this.setEditionMode(false);
         }
+    }
+
+    handleOnBlur() {
+        this.setEditionMode(false);
     }
 
     handleOnChange(e) {
