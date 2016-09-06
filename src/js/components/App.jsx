@@ -42,7 +42,12 @@ class App extends React.Component {
     }
 
     updateTodoDescription(id, newDescription) {
-        console.log(id, newDescription);
+        let { todos } = this.state;
+
+        const todoToModify = todos.find(todo => todo.id === id);
+        todoToModify.description = newDescription;
+
+        this.setState({ todos });
     }
 
     onClickRemoveIcon(id) {
