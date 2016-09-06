@@ -35,7 +35,7 @@ class App extends React.Component {
                     todos={this.state.todos}
                     onToggleCheckbox={this.completeTodo.bind(this)} 
                     onDescriptionChange={this.updateTodoDescription.bind(this)}
-                    onClickRemoveIcon={this.onClickRemoveIcon.bind(this)}
+                    onClickRemoveIcon={this.removeTodo.bind(this)}
                 />
             </div>
         );
@@ -86,7 +86,7 @@ class App extends React.Component {
         return this.state.todos.every(todo => todo.completed);
     }
 
-    onClickRemoveIcon(id) {
+    removeTodo(id) {
         let { todos } = this.state;
 
         const index = todos.findIndex(todo => todo.id === id);
