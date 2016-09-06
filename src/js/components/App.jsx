@@ -29,6 +29,7 @@ class App extends React.Component {
                 <input
                     className="toggle-all"
                     type="checkbox"
+                    checked={this.isAllTodoCompleted()}
                     onClick={this.toggleAllTodosCompletion.bind(this)}/>
                 <NewTodoInput onEnterDescription={this.createTodo.bind(this)} />
                 <TodoList
@@ -80,6 +81,10 @@ class App extends React.Component {
         todoToModify.description = newDescription;
 
         this.setState({ todos });
+    }
+
+    isAllTodoCompleted() {
+        return this.state.todos.every(todo => todo.completed);
     }
 
     onClickRemoveIcon(id) {
