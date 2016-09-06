@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
 import { keyCodes } from 'utils'
 
 const NewTodoInput = props => 
@@ -8,10 +8,14 @@ const handleKeyUp = (e, props) => {
     const newDescription = e.target.value;
 
     if (e.keyCode === keyCodes.ENTER) {
-        console.log(newDescription);
+        props.onEnterDescription(newDescription);
         e.target.value = '';
     }
 }
+
+NewTodoInput.propTypes = {
+    onEnterDescription: PropTypes.func.isRequired
+};
 
 export {
     NewTodoInput
