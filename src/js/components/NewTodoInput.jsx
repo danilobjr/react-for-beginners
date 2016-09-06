@@ -9,6 +9,7 @@ const handleKeyUp = (e, props) => {
 
     if (e.keyCode === keyCodes.ENTER) {
         console.log(newDescription);
+        e.target.value = '';
     }
 }
 
