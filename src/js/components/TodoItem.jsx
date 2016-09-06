@@ -54,6 +54,11 @@ class TodoItem extends Component {
         if (e.keyCode === 27) {
             this.setEditionMode(false);
         }
+
+        if (e.keyCode === 13) {
+            console.log('trigger description update:', this.props.todo.description);
+            this.setEditionMode(false);
+        }
     }
 
     handleOnBlur() {
