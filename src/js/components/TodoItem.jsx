@@ -30,7 +30,7 @@ class TodoItem extends Component {
         return editionModeEnabled
             ? <TodoItemEdit 
                 todo={todo}
-                onConfirmEdition={this.handleDescriptionUpdate.bind(this)}
+                onConfirmEdition={this.handleDescriptionChange.bind(this)}
                 onCancelEdition={() => this.setEditionMode(false)}
               />
             : <TodoItemView
@@ -41,8 +41,8 @@ class TodoItem extends Component {
               />;
     }
 
-    handleDescriptionUpdate(id, description) {
-        console.log('trigger description update:', id, description);
+    handleDescriptionChange(id, description) {
+        console.log('trigger description change:', id, description);
         this.setEditionMode(false);
     }
 
