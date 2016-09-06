@@ -49,7 +49,9 @@ class TodoItem extends Component {
     }
 
     handleKeyUp(e) {
-        console.log(e.keyCode);
+        if (e.keyCode === 27) {
+            this.setEditionMode(false);
+        }
     }
 
     handleOnChange(e) {
