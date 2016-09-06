@@ -26,7 +26,11 @@ class TodoItem extends Component {
         const { editionModeEnabled } = this.state;
 
         return editionModeEnabled
-            ? <input className="edit" defaultValue={todo.description} />
+            ? <input
+                className="edit"
+                defaultValue={todo.description}
+                onKeyPress={this.handleKeyPress.bind(this)} 
+              />
             : (
                 <div onDoubleClick={() => this.setEditionMode(true)}>
                     <input
@@ -42,6 +46,10 @@ class TodoItem extends Component {
                     ></button>
                 </div>
             );
+    }
+
+    handleKeyPress(e) {
+        console.log(e.keyCode);
     }
 
     handleOnChange(e) {
