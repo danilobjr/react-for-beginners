@@ -13,7 +13,21 @@ class TodoItem extends Component {
         const { todo } = this.props;
         console.log('edition mode enabled', this.state.editionModeEnabled);
         return (
-            <li className={this.getLiCssClasses()}>
+            <li className={this.getLiCssClasses()}>{this.renderContent()}</li>
+        );
+    }
+
+    getLiCssClasses() {
+        return this.props.todo.completed ? 'completed' : '';
+    }
+
+    renderContent() {
+        const { todo } = this.props;
+        const { editionModeEnabled } = this.state;
+
+        return editionModeEnabled
+            ? <input className="edit" value={todo.description} />
+            : (
                 <div onDoubleClick={() => this.setEditionMode(true)}>
                     <input
                         className="toggle"
@@ -27,12 +41,7 @@ class TodoItem extends Component {
                         onClick={this.handleOnClickRemoveIcon.bind(this)}
                     ></button>
                 </div>
-            </li>
-        );
-    }
-
-    getLiCssClasses() {
-        return this.props.todo.completed ? 'completed' : '';
+            );
     }
 
     handleOnChange(e) {
