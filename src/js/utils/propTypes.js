@@ -1,7 +1,7 @@
 import { PropTypes } from 'react'
 
 const todoShape = {
-    id: PropTypes.number,
+    id: PropTypes.string,
     description: PropTypes.string,
     completed: PropTypes.bool
 };
