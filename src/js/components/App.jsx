@@ -25,6 +25,7 @@ class App extends React.Component {
         return (
             <div className="todoapp">
                 <AppHeader />
+                <input className="new-todo" placeholder="What needs to be done?" />
                 <TodoList
                     todos={this.state.todos}
                     onToggleCheckbox={this.completeTodo.bind(this)} 
