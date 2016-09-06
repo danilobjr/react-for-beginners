@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react'
 import { keyCodes } from './../utils/keyCodes'
+import { propTypes } from './../utils/propTypes'
 
 const TodoItemEdit = props => 
     <input
@@ -24,11 +25,7 @@ const handleKeyUp = (e, props) => {
 }
 
 TodoItemEdit.propTypes = {
-    todo: PropTypes.shape({
-        id: PropTypes.number,
-        description: PropTypes.string,
-        completed: PropTypes.bool
-    }).isRequired,
+    todo: propTypes.todoRequired,
     onConfirmEdition: PropTypes.func.isRequired,
     onCancelEdition: PropTypes.func.isRequired
 };

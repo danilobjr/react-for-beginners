@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { TodoItemEdit } from './TodoItemEdit'
 import { TodoItemView } from './TodoItemView'
+import { propTypes } from './../utils/propTypes'
 
 class TodoItem extends Component {
     constructor(props) {
@@ -52,11 +53,7 @@ class TodoItem extends Component {
 }
 
 TodoItem.propTypes = {
-    todo: PropTypes.shape({
-        id: PropTypes.number,
-        description: PropTypes.string,
-        completed: PropTypes.bool
-    }),
+    todo: propTypes.todoRequired,
     onToggleCheckbox: PropTypes.func.isRequired,
     onClickRemoveIcon: PropTypes.func.isRequired
 };

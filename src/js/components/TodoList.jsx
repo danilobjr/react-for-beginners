@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { TodoItem } from './TodoItem'
+import { propTypes } from './../utils/propTypes'
 
 const TodoList = props =>
     <ul className="todo-list">
@@ -17,11 +18,7 @@ const renderTodoItems = (props) =>
     )
 
 TodoList.propTypes = {
-    todos: PropTypes.arrayOf(PropTypes.shape({
-        id: PropTypes.number,
-        description: PropTypes.string,
-        completed: PropTypes.bool
-    })),
+    todos: propTypes.todos,
     onToggleCheckbox: PropTypes.func.isRequired,
     onClickRemoveIcon: PropTypes.func.isRequired
 };

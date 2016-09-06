@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react'
+import { propTypes } from './../utils/propTypes'
 
 const TodoItemView = (props) => 
     <div onDoubleClick={props.onDoubleClick}>
@@ -29,11 +30,7 @@ const handleOnClickRemoveIcon = props => {
 }
 
 TodoItemView.propTypes = {
-    todo: PropTypes.shape({
-        id: PropTypes.number,
-        description: PropTypes.string,
-        completed: PropTypes.bool
-    }),
+    todo: propTypes.todoRequired,
     onDoubleClick: PropTypes.func.isRequired,
     onToggleCheckbox: PropTypes.func.isRequired,
     onClickRemoveIcon: PropTypes.func.isRequired
