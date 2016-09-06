@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react'
+import { TodoItemView } from './TodoItemView'
 
 class TodoItem extends Component {
     constructor(props) {
@@ -22,7 +23,7 @@ class TodoItem extends Component {
     }
 
     renderContent() {
-        const { todo } = this.props;
+        const { todo, onToggleCheckbox, onClickRemoveIcon } = this.props;
         const { editionModeEnabled } = this.state;
 
         return editionModeEnabled
@@ -33,21 +34,12 @@ class TodoItem extends Component {
                 onKeyUp={this.handleKeyUp.bind(this)} 
                 onBlur={this.handleOnBlur.bind(this)}
               />
-            : (
-                <div onDoubleClick={() => this.setEditionMode(true)}>
-                    <input
-                        className="toggle"
-                        type="checkbox"
-                        checked={todo.completed}
-                        onChange={this.handleOnChange.bind(this)}
-                    />
-                    <label>{todo.description}</label>
-                    <button
-                        className="destroy"
-                        onClick={this.handleOnClickRemoveIcon.bind(this)}
-                    ></button>
-                </div>
-            );
+            : <TodoItemView
+                todo={todo}
+                onDoubleClick={() => this.setEditionMode(true)}
+                onToggleCheckbox={onToggleCheckbox} 
+                onClickRemoveIcon={onClickRemoveIcon}
+              />;
     }
 
     handleKeyUp(e) {
@@ -63,19 +55,6 @@ class TodoItem extends Component {
 
     handleOnBlur() {
         this.setEditionMode(false);
-    }
-
-    handleOnChange(e) {
-        const { todo, onToggleCheckbox } = this.props;
-        const completed = e.target.checked;
-
-        onToggleCheckbox(todo.id, completed);
-    }
-
-    handleOnClickRemoveIcon() {
-        const { todo, onClickRemoveIcon } = this.props;
-
-        onClickRemoveIcon(todo.id);
     }
 
     setEditionMode(isEnabled) {

@@ -1,0 +1,44 @@
+import React, { PropTypes } from 'react'
+
+const TodoItemView = (props) => 
+    <div onDoubleClick={props.onDoubleClick}>
+        <input
+            className="toggle"
+            type="checkbox"
+            checked={props.todo.completed}
+            onChange={(e) => handleOnChange(e, props)}
+        />
+        <label>{props.todo.description}</label>
+        <button
+            className="destroy"
+            onClick={() => handleOnClickRemoveIcon(props)}
+        ></button>
+    </div>
+
+const handleOnChange = (e, props) => {
+    const { todo, onToggleCheckbox } = props;
+    const completed = e.target.checked;
+
+    onToggleCheckbox(todo.id, completed);
+}
+
+const handleOnClickRemoveIcon = props => {
+    const { todo, onClickRemoveIcon } = props;
+
+    onClickRemoveIcon(todo.id);
+}
+
+TodoItemView.propTypes = {
+    todo: PropTypes.shape({
+        id: PropTypes.number,
+        description: PropTypes.string,
+        completed: PropTypes.bool
+    }),
+    onDoubleClick: PropTypes.func.isRequired,
+    onToggleCheckbox: PropTypes.func.isRequired,
+    onClickRemoveIcon: PropTypes.func.isRequired
+};
+
+export {
+    TodoItemView
+}
