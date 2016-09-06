@@ -11,7 +11,7 @@ class TodoItem extends Component {
 
     render() {
         const { todo } = this.props;
-        console.log('edition mode enabled', this.state.editionModeEnabled);
+
         return (
             <li className={this.getLiCssClasses()}>{this.renderContent()}</li>
         );
