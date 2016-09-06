@@ -14,7 +14,7 @@ class TodoItem extends Component {
         console.log('edition mode enabled', this.state.editionModeEnabled);
         return (
             <li className={this.getLiCssClasses()}>
-                <div className="view" onDoubleClick={() => this.setEditionMode(true)}>
+                <div onDoubleClick={() => this.setEditionMode(true)}>
                     <input
                         className="toggle"
                         type="checkbox"
