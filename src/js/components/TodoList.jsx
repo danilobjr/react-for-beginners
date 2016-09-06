@@ -13,6 +13,7 @@ const renderTodoItems = (props) =>
             key={todo.id}
             todo={todo}
             onToggleCheckbox={props.onToggleCheckbox} 
+            onDescriptionChange={props.onDescriptionChange}
             onClickRemoveIcon={props.onClickRemoveIcon}
         />
     )
@@ -20,6 +21,7 @@ const renderTodoItems = (props) =>
 TodoList.propTypes = {
     todos: propTypes.todos,
     onToggleCheckbox: PropTypes.func.isRequired,
+    onDescriptionChange: PropTypes.func.isRequired,
     onClickRemoveIcon: PropTypes.func.isRequired
 };
 

@@ -41,8 +41,8 @@ class TodoItem extends Component {
               />;
     }
 
-    handleDescriptionChange(id, description) {
-        console.log('trigger description change:', id, description);
+    handleDescriptionChange(id, newDescription) {
+        this.props.onDescriptionChange(id, newDescription);
         this.setEditionMode(false);
     }
 
@@ -54,6 +54,7 @@ class TodoItem extends Component {
 TodoItem.propTypes = {
     todo: propTypes.todoRequired,
     onToggleCheckbox: PropTypes.func.isRequired,
+    onDescriptionChange: PropTypes.func.isRequired,
     onClickRemoveIcon: PropTypes.func.isRequired
 };
 

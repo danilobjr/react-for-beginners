@@ -26,6 +26,7 @@ class App extends React.Component {
             <TodoList
                 todos={this.state.todos}
                 onToggleCheckbox={this.completeTodo.bind(this)} 
+                onDescriptionChange={this.updateTodoDescription.bind(this)}
                 onClickRemoveIcon={this.onClickRemoveIcon.bind(this)}
             />
         );
@@ -38,6 +39,10 @@ class App extends React.Component {
         todoToModify.completed = completed;
 
         this.setState({ todos });
+    }
+
+    updateTodoDescription(id, newDescription) {
+        console.log(id, newDescription);
     }
 
     onClickRemoveIcon(id) {
