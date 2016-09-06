@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react'
+import { keyCodes } from './../utils/keyCodes'
 
 const TodoItemEdit = props => 
     <input
@@ -12,11 +13,11 @@ const TodoItemEdit = props =>
 const handleKeyUp = (e, props) => {
     const { todo, onConfirmEdition, onCancelEdition } = props;
 
-    if (e.keyCode === 27) {
+    if (e.keyCode === keyCodes.ESC) {
         onCancelEdition();
     }
 
-    if (e.keyCode === 13) {
+    if (e.keyCode === keyCodes.ENTER) {
         const newDescription = e.target.value;
         onConfirmEdition(todo.id, newDescription);
     }
