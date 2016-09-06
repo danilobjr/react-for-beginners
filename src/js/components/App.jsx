@@ -1,5 +1,5 @@
 import React from 'react'
-import { TodoList } from 'components'
+import { AppHeader, TodoList } from 'components'
 
 class App extends React.Component {
     constructor() {
@@ -24,9 +24,7 @@ class App extends React.Component {
     render() {
         return (
             <div className="todoapp">
-                <header>
-                    <h1>todos</h1>
-                </header>
+                <AppHeader />
                 <TodoList
                     todos={this.state.todos}
                     onToggleCheckbox={this.completeTodo.bind(this)} 
