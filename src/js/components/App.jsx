@@ -1,6 +1,6 @@
 import React from 'react'
 import uuid from 'node-uuid'
-import { AppHeader, NewTodoInput, TodoList } from 'components'
+import { AppHeader, ToggleAll, NewTodoInput, TodoList } from 'components'
 
 class App extends React.Component {
     constructor() {
@@ -26,11 +26,10 @@ class App extends React.Component {
         return (
             <div className="todoapp">
                 <AppHeader />
-                <input
-                    className="toggle-all"
-                    type="checkbox"
-                    checked={this.isAllTodoCompleted()}
-                    onClick={this.toggleAllTodosCompletion.bind(this)}/>
+                <ToggleAll
+                    todos={this.state.todos}
+                    onClick={this.toggleAllTodosCompletion.bind(this)}
+                />
                 <NewTodoInput onEnterDescription={this.createTodo.bind(this)} />
                 <TodoList
                     todos={this.state.todos}
