@@ -26,7 +26,12 @@ module.exports = {
         ]
     },
     resolve: {
-        extensions: ['', '.webpack.js', '.web.js', '.js', '.jsx', '.css'],
-        // alias - todo
+        root: resolvePath('src'),
+        alias: {
+            'components': 'js/components',
+            'utils': 'js/utils',
+            'css': 'css'
+        },
+        extensions: ['', '.webpack.js', '.web.js', '.js', '.jsx', '.css']
     }
 };
