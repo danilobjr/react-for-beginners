@@ -23,12 +23,14 @@ class App extends React.Component {
 
     render() {
         return (
-            <TodoList
-                todos={this.state.todos}
-                onToggleCheckbox={this.completeTodo.bind(this)} 
-                onDescriptionChange={this.updateTodoDescription.bind(this)}
-                onClickRemoveIcon={this.onClickRemoveIcon.bind(this)}
-            />
+            <div className="todoapp">
+                <TodoList
+                    todos={this.state.todos}
+                    onToggleCheckbox={this.completeTodo.bind(this)} 
+                    onDescriptionChange={this.updateTodoDescription.bind(this)}
+                    onClickRemoveIcon={this.onClickRemoveIcon.bind(this)}
+                />
+            </div>
         );
     }
 
