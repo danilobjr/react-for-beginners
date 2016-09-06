@@ -127,19 +127,20 @@ label[for='toggle-all'] {
 
 .toggle-all {
 	position: absolute;
-	top: -55px;
-	left: -12px;
+	top: 7px;
+	left: -8px;
 	width: 60px;
-	height: 34px;
+	height: 48px;
+    padding: 6px;
 	text-align: center;
 	border: none; /* Mobile Safari */
+    z-index: 1;
 }
 
 .toggle-all:before {
 	content: '❯';
 	font-size: 22px;
 	color: #e6e6e6;
-	padding: 10px 27px 10px 27px;
 }
 
 .toggle-all:checked:before {

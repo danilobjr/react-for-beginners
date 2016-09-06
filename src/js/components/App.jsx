@@ -26,6 +26,7 @@ class App extends React.Component {
         return (
             <div className="todoapp">
                 <AppHeader />
+                <input className="toggle-all" type="checkbox" />
                 <NewTodoInput onEnterDescription={this.createTodo.bind(this)} />
                 <TodoList
                     todos={this.state.todos}
