@@ -2,14 +2,14 @@ import React, { PropTypes } from 'react'
 import { propTypes } from 'utils'
 
 const TodoItemView = (props) => 
-    <div onDoubleClick={props.onDoubleClick}>
+    <div>
         <input
             className="toggle"
             type="checkbox"
             checked={props.todo.completed}
             onChange={(e) => handleOnChange(e, props)}
         />
-        <label>{props.todo.description}</label>
+        <label onDoubleClick={props.onDoubleClick}>{props.todo.description}</label>
         <button
             className="destroy"
             onClick={() => handleOnClickRemoveIcon(props)}
