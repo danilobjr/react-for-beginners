@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
-import { TodoItem } from './TodoItem'
-import { propTypes } from './../utils'
+import { TodoItem } from 'components'
+import { propTypes } from 'utils'
 
 const TodoList = props =>
     <ul className="todo-list">

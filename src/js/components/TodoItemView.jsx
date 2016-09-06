@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import { propTypes } from './../utils'
+import { propTypes } from 'utils'
 
 const TodoItemView = (props) => 
     <div onDoubleClick={props.onDoubleClick}>

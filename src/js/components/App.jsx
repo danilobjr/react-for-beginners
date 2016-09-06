@@ -1,6 +1,5 @@
 import React from 'react'
-import { TodoList } from './TodoList'
-import classNames from 'classnames'
+import { TodoList } from 'components'
 
 class App extends React.Component {
     constructor() {

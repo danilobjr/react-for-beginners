@@ -1,7 +1,7 @@
-import './css/index'
+import 'css'
 
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { App } from './js/components/App'
+import { App } from 'components'
 
 ReactDOM.render(<App />, document.getElementById('app'));
