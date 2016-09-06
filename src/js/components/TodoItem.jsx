@@ -26,7 +26,7 @@ class TodoItem extends Component {
         const { editionModeEnabled } = this.state;
 
         return editionModeEnabled
-            ? <input className="edit" value={todo.description} />
+            ? <input className="edit" defaultValue={todo.description} />
             : (
                 <div onDoubleClick={() => this.setEditionMode(true)}>
                     <input
