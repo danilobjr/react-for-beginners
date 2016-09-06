@@ -29,6 +29,7 @@ class TodoItem extends Component {
             ? <input
                 className="edit"
                 defaultValue={todo.description}
+                autoFocus
                 onKeyUp={this.handleKeyUp.bind(this)} 
               />
             : (
