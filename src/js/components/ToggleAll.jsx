@@ -1,9 +1,13 @@
 import React from 'react'
+import classNames from 'classnames'
 import { propTypes } from 'utils'
 
 const ToggleAll = props => 
     <input
-        className="toggle-all"
+        className={classNames(
+            'toggle-all', 
+            { hidden: isTodosListEmpty(props) }
+        )}
         type="checkbox"
         checked={isAllTodoCompleted(props)}
         onClick={props.onClick}
@@ -11,6 +15,9 @@ const ToggleAll = props =>
 
 const isAllTodoCompleted = props =>
     props.todos.every(todo => todo.completed)
+
+const isTodosListEmpty = props =>
+    props.todos.length === 0
 
 ToggleAll.propTypes = {
     todos: propTypes.todos
