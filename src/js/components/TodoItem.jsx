@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react'
+import { TodoItemEdit } from './TodoItemEdit'
 import { TodoItemView } from './TodoItemView'
 
 class TodoItem extends Component {
@@ -27,12 +28,10 @@ class TodoItem extends Component {
         const { editionModeEnabled } = this.state;
 
         return editionModeEnabled
-            ? <input
-                className="edit"
-                defaultValue={todo.description}
-                autoFocus
-                onKeyUp={this.handleKeyUp.bind(this)} 
-                onBlur={this.handleOnBlur.bind(this)}
+            ? <TodoItemEdit 
+                todo={todo}
+                onConfirmEdition={this.handleDescriptionUpdate.bind(this)}
+                onCancelEdition={() => this.setEditionMode(false)}
               />
             : <TodoItemView
                 todo={todo}
@@ -42,18 +41,8 @@ class TodoItem extends Component {
               />;
     }
 
-    handleKeyUp(e) {
-        if (e.keyCode === 27) {
-            this.setEditionMode(false);
-        }
-
-        if (e.keyCode === 13) {
-            console.log('trigger description update:', this.props.todo.description);
-            this.setEditionMode(false);
-        }
-    }
-
-    handleOnBlur() {
+    handleDescriptionUpdate(id, description) {
+        console.log('trigger description update:', id, description);
         this.setEditionMode(false);
     }
 
