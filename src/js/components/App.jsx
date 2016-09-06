@@ -24,6 +24,9 @@ class App extends React.Component {
     render() {
         return (
             <div className="todoapp">
+                <header>
+                    <h1>todos</h1>
+                </header>
                 <TodoList
                     todos={this.state.todos}
                     onToggleCheckbox={this.completeTodo.bind(this)} 
