@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react'
-import { keyCodes } from './../utils/keyCodes'
-import { propTypes } from './../utils/propTypes'
+import { keyCodes, propTypes } from './../utils'
 
 const TodoItemEdit = props => 
     <input

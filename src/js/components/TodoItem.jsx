@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { TodoItemEdit } from './TodoItemEdit'
 import { TodoItemView } from './TodoItemView'
-import { propTypes } from './../utils/propTypes'
+import { propTypes } from './../utils'
 
 class TodoItem extends Component {
     constructor(props) {
