@@ -25,7 +25,7 @@ class App extends React.Component {
         return (
             <div className="todoapp">
                 <AppHeader />
-                <NewTodoInput onEnterDescription={(newDescription) => console.log(newDescription)} />
+                <NewTodoInput onEnterDescription={this.createTodo.bind(this)} />
                 <TodoList
                     todos={this.state.todos}
                     onToggleCheckbox={this.completeTodo.bind(this)} 
@@ -34,6 +34,16 @@ class App extends React.Component {
                 />
             </div>
         );
+    }
+
+    createTodo(description) {
+        this.state.todos.push({
+            id: 3,
+            description,
+            completed: false
+        });
+
+        this.setState({ todos: this.state.todos });
     }
 
     completeTodo(id, completed) {
