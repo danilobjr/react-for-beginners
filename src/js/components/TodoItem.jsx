@@ -1,12 +1,20 @@
 import React, { Component, PropTypes } from 'react'
 
 class TodoItem extends Component {
+    constructor(props) {
+        super(props);
+    
+        this.state = {
+            editionModeEnabled: false
+        };
+    }
+
     render() {
         const { todo } = this.props;
-
+        console.log('edition mode enabled', this.state.editionModeEnabled);
         return (
-            <li className={this.getLiCssClasses.bind(this)}>
-                <div className="view" onDoubleClick={() => console.log('double click')}>
+            <li className={this.getLiCssClasses()}>
+                <div className="view" onDoubleClick={() => this.setEditionMode(true)}>
                     <input
                         className="toggle"
                         type="checkbox"
@@ -38,6 +46,10 @@ class TodoItem extends Component {
         const { todo, onClickRemoveIcon } = this.props;
 
         onClickRemoveIcon(todo.id);
+    }
+
+    setEditionMode(isEnabled) {
+        this.setState({ editionModeEnabled: isEnabled });
     }
 }
 
