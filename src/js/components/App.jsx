@@ -26,7 +26,10 @@ class App extends React.Component {
         return (
             <div className="todoapp">
                 <AppHeader />
-                <input className="toggle-all" type="checkbox" />
+                <input
+                    className="toggle-all"
+                    type="checkbox"
+                    onClick={this.toggleAllTodosCompletion.bind(this)}/>
                 <NewTodoInput onEnterDescription={this.createTodo.bind(this)} />
                 <TodoList
                     todos={this.state.todos}
@@ -36,6 +39,19 @@ class App extends React.Component {
                 />
             </div>
         );
+    }
+
+    toggleAllTodosCompletion() {
+        const { todos } = this.state;
+        const allTodosAreCompleted = todos.every(todo => todo.completed);
+
+        if (allTodosAreCompleted) {
+            todos.forEach(todo => todo.completed = false);
+        } else {
+            todos.forEach(todo => todo.completed = true);
+        }
+
+        this.setState({ todos: this.state.todos });
     }
 
     createTodo(description) {
