@@ -1,5 +1,6 @@
 export { App } from './App'
 export { AppHeader } from './AppHeader'
+export { NewTodoInput } from './NewTodoInput'
 export { TodoItem } from './TodoItem'
 export { TodoItemEdit } from './TodoItemEdit'
 export { TodoItemView } from './TodoItemView'

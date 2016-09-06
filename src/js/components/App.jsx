@@ -1,5 +1,5 @@
 import React from 'react'
-import { AppHeader, TodoList } from 'components'
+import { AppHeader, NewTodoInput, TodoList } from 'components'
 
 class App extends React.Component {
     constructor() {
@@ -25,7 +25,7 @@ class App extends React.Component {
         return (
             <div className="todoapp">
                 <AppHeader />
-                <input className="new-todo" placeholder="What needs to be done?" />
+                <NewTodoInput />
                 <TodoList
                     todos={this.state.todos}
                     onToggleCheckbox={this.completeTodo.bind(this)} 
