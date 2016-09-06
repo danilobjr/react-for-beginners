@@ -1,4 +1,5 @@
 import React from 'react'
+import uuid from 'node-uuid'
 import { AppHeader, NewTodoInput, TodoList } from 'components'
 
 class App extends React.Component {
@@ -8,12 +9,12 @@ class App extends React.Component {
         this.state = {
             todos: [
                 {
-                    id: 1,
+                    id: uuid.v1(),
                     description: 'talk to John',
                     completed: false
                 },
                 { 
-                    id: 2,
+                    id: uuid.v1(),
                     description: 'buy some fruits',
                     completed: true
                 }
@@ -38,7 +39,7 @@ class App extends React.Component {
 
     createTodo(description) {
         this.state.todos.push({
-            id: 3,
+            id: uuid.v1(),
             description,
             completed: false
         });
