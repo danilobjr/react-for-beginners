@@ -186,7 +186,7 @@ label[for='toggle-all'] {
 	position: absolute;
 	top: 0;
 	bottom: 0;
-	margin: auto 0;
+	margin: auto 0 auto 7px;
 	border: none; /* Mobile Safari */
 	-webkit-appearance: none;
 	appearance: none;
