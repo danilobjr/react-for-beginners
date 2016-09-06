@@ -29,7 +29,7 @@ class TodoItem extends Component {
             ? <input
                 className="edit"
                 defaultValue={todo.description}
-                onKeyPress={this.handleKeyPress.bind(this)} 
+                onKeyUp={this.handleKeyUp.bind(this)} 
               />
             : (
                 <div onDoubleClick={() => this.setEditionMode(true)}>
@@ -48,7 +48,7 @@ class TodoItem extends Component {
             );
     }
 
-    handleKeyPress(e) {
+    handleKeyUp(e) {
         console.log(e.keyCode);
     }
 
