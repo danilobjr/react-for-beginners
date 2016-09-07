@@ -6,7 +6,7 @@ const Footer = props =>
         <span className="todo-count">
             <span>{getIncompleteTodosCount(props)}</span>
             &nbsp;
-            <span>item</span>
+            <span>{renderItemWord(props)}</span>
             &nbsp;
             <span>left</span>
         </span>
@@ -14,6 +14,9 @@ const Footer = props =>
 
 const getIncompleteTodosCount = props =>
     props.todos.filter(todo => !todo.completed).length;
+
+const renderItemWord = props =>
+    getIncompleteTodosCount(props) > 1 ? 'items' : 'item'
 
 Footer.propTypes = {
     todos: propTypes.todosRequired
