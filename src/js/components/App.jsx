@@ -42,7 +42,7 @@ class App extends React.Component {
                 />
                 <Footer
                     todos={this.state.todos}
-                    onClickClearCompletedButton={() => console.log('remove completed todos')} 
+                    onClickClearCompletedButton={this.removeCompletedTodos.bind(this)} 
                 />
             </div>
         );
@@ -100,6 +100,12 @@ class App extends React.Component {
         todos.splice(index, 1);
 
         this.setState({ todos });
+    }
+
+    removeCompletedTodos() {
+        const incompleteTodos = this.state.todos.filter(todo => !todo.completed);
+
+        this.setState({ todos: incompleteTodos });
     }
 }
 
