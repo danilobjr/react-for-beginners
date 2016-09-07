@@ -8,7 +8,7 @@ const todoShape = {
 
 const propTypes = {
     todoRequired: PropTypes.shape(todoShape).isRequired,
-    todos: PropTypes.arrayOf(PropTypes.shape(todoShape))
+    todosRequired: PropTypes.arrayOf(PropTypes.shape(todoShape)).isRequired
 };
 
 export {

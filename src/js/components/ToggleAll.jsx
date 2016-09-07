@@ -20,7 +20,7 @@ const isTodosListEmpty = props =>
     props.todos.length === 0
 
 ToggleAll.propTypes = {
-    todos: propTypes.todos
+    todos: propTypes.todosRequired
 };
 
 export {

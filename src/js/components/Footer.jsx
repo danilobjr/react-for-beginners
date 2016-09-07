@@ -13,7 +13,7 @@ const Footer = props =>
     </footer>   
 
 Footer.propTypes = {
-    todos: propTypes.todos
+    todos: propTypes.todosRequired
 };
 
 export {
