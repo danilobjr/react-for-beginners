@@ -12,6 +12,11 @@ const getCssClasses = props =>
 const Footer = props => 
     <footer className={getCssClasses(props)}>
         <IncompleteTodosCount todos={props.todos} />
+        <ul className="filters">
+            <li><a href="#">All</a></li>
+            <li><a href="#">Active</a></li>
+            <li><a href="#">Completed</a></li>
+        </ul>
         <ClearCompletedButton
             hidden={isClearCompletedButtonHidden(props)}
             onClick={props.onClickClearCompletedButton} 
