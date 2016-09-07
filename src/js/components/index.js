@@ -1,6 +1,7 @@
 export { App } from './App'
 export { AppHeader } from './AppHeader'
 export { Footer } from './Footer'
+export { IncompleteTodosCount } from './IncompleteTodosCount'
 export { NewTodoInput } from './NewTodoInput'
 export { TodoItem } from './TodoItem'
 export { TodoItemEdit } from './TodoItemEdit'
