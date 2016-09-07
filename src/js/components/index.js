@@ -1,5 +1,6 @@
 export { App } from './App'
 export { AppHeader } from './AppHeader'
+export { ClearCompletedButton } from './ClearCompletedButton'
 export { Footer } from './Footer'
 export { IncompleteTodosCount } from './IncompleteTodosCount'
 export { NewTodoInput } from './NewTodoInput'
