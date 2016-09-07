@@ -10,6 +10,7 @@ class App extends React.Component {
         super();
 
         this.state = {
+            filter: 'All',
             todos: [
                 {
                     id: uuid.v1(),
@@ -26,6 +27,8 @@ class App extends React.Component {
     }
 
     render() {
+        console.log('filter state:', this.state.filter);
+
         return (
             <div className="todoapp">
                 <AppHeader />
@@ -42,7 +45,7 @@ class App extends React.Component {
                 />
                 <Footer
                     todos={this.state.todos}
-                    onClickFilter={(filter) => console.log(filter)}
+                    onClickFilter={this.setFilter.bind(this)}
                     onClickClearCompletedButton={this.removeCompletedTodos.bind(this)} 
                 />
             </div>
@@ -101,6 +104,10 @@ class App extends React.Component {
         todos.splice(index, 1);
 
         this.setState({ todos });
+    }
+
+    setFilter(filter) {
+        this.setState({ filter });
     }
 
     removeCompletedTodos() {
