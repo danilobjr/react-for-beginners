@@ -4,13 +4,14 @@ import {
     AppHeader, ToggleAll, NewTodoInput, 
     TodoList, Footer
 } from 'components'
+import { filters } from 'utils'
 
 class App extends React.Component {
     constructor() {
         super();
 
         this.state = {
-            filter: 'All',
+            filter: filters.ALL,
             todos: [
                 {
                     id: uuid.v1(),
