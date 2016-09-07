@@ -37,6 +37,15 @@ class App extends React.Component {
                     onDescriptionChange={this.updateTodoDescription.bind(this)}
                     onClickRemoveIcon={this.removeTodo.bind(this)}
                 />
+                <footer className="footer">
+                    <span className="todo-count">
+                        <span>1</span>
+                        &nbsp;
+                        <span>item</span>
+                        &nbsp;
+                        <span>left</span>
+                    </span>
+                </footer>
             </div>
         );
     }
