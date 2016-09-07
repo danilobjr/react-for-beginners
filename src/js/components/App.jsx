@@ -40,7 +40,10 @@ class App extends React.Component {
                     onDescriptionChange={this.updateTodoDescription.bind(this)}
                     onClickRemoveIcon={this.removeTodo.bind(this)}
                 />
-                <Footer todos={this.state.todos} />
+                <Footer
+                    todos={this.state.todos}
+                    onClickClearCompletedButton={() => console.log('remove completed todos')} 
+                />
             </div>
         );
     }

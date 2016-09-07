@@ -5,10 +5,16 @@ const getCssClasses = props =>
     classNames('clear-completed', { hidden: props.hidden })
 
 const ClearCompletedButton = props => 
-    <button className={getCssClasses(props)}>Clear Completed</button>
+    <button
+        className={getCssClasses(props)}
+        onClick={props.onClick}
+    >
+        Clear Completed
+    </button>
 
 ClearCompletedButton.propTypes = {
-    hidden: PropTypes.bool
+    hidden: PropTypes.bool,
+    onClick: PropTypes.func.isRequired
 };
 
 ClearCompletedButton.defaultProps = {
