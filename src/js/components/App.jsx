@@ -42,6 +42,7 @@ class App extends React.Component {
                 />
                 <Footer
                     todos={this.state.todos}
+                    onClickFilter={(filter) => console.log(filter)}
                     onClickClearCompletedButton={this.removeCompletedTodos.bind(this)} 
                 />
             </div>
