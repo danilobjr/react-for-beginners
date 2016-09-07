@@ -1,6 +1,9 @@
 import React from 'react'
 import uuid from 'node-uuid'
-import { AppHeader, ToggleAll, NewTodoInput, TodoList } from 'components'
+import { 
+    AppHeader, ToggleAll, NewTodoInput, 
+    TodoList, Footer
+} from 'components'
 
 class App extends React.Component {
     constructor() {
@@ -37,15 +40,7 @@ class App extends React.Component {
                     onDescriptionChange={this.updateTodoDescription.bind(this)}
                     onClickRemoveIcon={this.removeTodo.bind(this)}
                 />
-                <footer className="footer">
-                    <span className="todo-count">
-                        <span>1</span>
-                        &nbsp;
-                        <span>item</span>
-                        &nbsp;
-                        <span>left</span>
-                    </span>
-                </footer>
+                <Footer />
             </div>
         );
     }
