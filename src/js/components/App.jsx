@@ -44,6 +44,7 @@ class App extends React.Component {
                 />
                 <Footer
                     todos={this.state.todos}
+                    filterSelected={this.state.filter}
                     onClickFilter={this.setFilter.bind(this)}
                     onClickClearCompletedButton={this.removeCompletedTodos.bind(this)} 
                 />

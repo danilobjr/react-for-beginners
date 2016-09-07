@@ -12,7 +12,10 @@ const getCssClasses = props =>
 const Footer = props => 
     <footer className={getCssClasses(props)}>
         <IncompleteTodosCount todos={props.todos} />
-        <Filters onClickFilter={props.onClickFilter} />
+        <Filters
+            filterSelected={props.filterSelected}
+            onClickFilter={props.onClickFilter} 
+        />
         <ClearCompletedButton
             hidden={isClearCompletedButtonHidden(props)}
             onClick={props.onClickClearCompletedButton} 
@@ -24,6 +27,7 @@ const isClearCompletedButtonHidden = props =>
 
 Footer.propTypes = {
     todos: propTypes.todosRequired,
+    filterSelected: PropTypes.string.isRequired,
     onClickFilter: PropTypes.func.isRequired,
     onClickClearCompletedButton: PropTypes.func.isRequired
 };
