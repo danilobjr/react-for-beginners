@@ -1,9 +1,16 @@
 import React, { PropTypes } from 'react'
+import classNames from 'classnames'
 import { IncompleteTodosCount, ClearCompletedButton } from 'components'
 import { propTypes } from 'utils'
 
+const getCssClasses = props =>
+    classNames(
+        'footer', 
+        { hidden: props.todos.length === 0 }
+    )
+
 const Footer = props => 
-    <footer className="footer">
+    <footer className={getCssClasses(props)}>
         <IncompleteTodosCount todos={props.todos} />
         <ClearCompletedButton
             hidden={isClearCompletedButtonHidden(props)}
