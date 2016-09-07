@@ -40,7 +40,7 @@ class App extends React.Component {
                     onDescriptionChange={this.updateTodoDescription.bind(this)}
                     onClickRemoveIcon={this.removeTodo.bind(this)}
                 />
-                <Footer />
+                <Footer todos={this.state.todos} />
             </div>
         );
     }

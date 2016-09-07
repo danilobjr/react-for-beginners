@@ -4,13 +4,16 @@ import { propTypes } from 'utils'
 const Footer = props => 
     <footer className="footer">
         <span className="todo-count">
-            <span>1</span>
+            <span>{getIncompleteTodosCount(props)}</span>
             &nbsp;
             <span>item</span>
             &nbsp;
             <span>left</span>
         </span>
     </footer>   
+
+const getIncompleteTodosCount = props =>
+    props.todos.filter(todo => !todo.completed).length;
 
 Footer.propTypes = {
     todos: propTypes.todosRequired
