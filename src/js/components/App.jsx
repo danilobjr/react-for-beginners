@@ -28,8 +28,6 @@ class App extends React.Component {
     }
 
     render() {
-        console.log('filter state:', this.state.filter);
-
         return (
             <div className="todoapp">
                 <AppHeader />
@@ -39,7 +37,7 @@ class App extends React.Component {
                 />
                 <NewTodoInput onEnterDescription={this.createTodo.bind(this)} />
                 <TodoList
-                    todos={this.state.todos}
+                    todos={this.getFilteredTodos()}
                     onToggleCheckbox={this.completeTodo.bind(this)} 
                     onDescriptionChange={this.updateTodoDescription.bind(this)}
                     onClickRemoveIcon={this.removeTodo.bind(this)}
@@ -51,6 +49,20 @@ class App extends React.Component {
                 />
             </div>
         );
+    }
+
+    getFilteredTodos() {
+        const { todos, filter } = this.state;
+
+        if (filter === filters.ACTIVE) {
+            return todos.filter(todo => !todo.completed);
+        }
+
+        if (filter === filters.COMPLETED) {
+            return todos.filter(todo => todo.completed);
+        }
+
+        return todos;
     }
 
     toggleAllTodosCompletion() {
