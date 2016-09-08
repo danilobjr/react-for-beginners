@@ -43,3 +43,4 @@ jspm_packages
 
 # others
 todo.md
+build/bundle.js
