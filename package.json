@@ -4,7 +4,8 @@
   "description": "App built on React for Beginners series on JS Channel, on YouTube.",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --content-base build --inline"
+    "start": "webpack-dev-server --content-base build --inline",
+    "build": "NODE_ENV=production webpack -p"
   },
   "repository": {
     "type": "git",

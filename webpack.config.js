@@ -1,6 +1,8 @@
+const webpack = require('webpack');
 const path = require('path');
 
 const resolvePath = value => path.resolve(__dirname, value)
+const isProductionEnvironment = process.env.NODE_ENV === 'production';
 
 module.exports = {
     entry: resolvePath('src/index.jsx'),
@@ -33,5 +35,10 @@ module.exports = {
             'css': 'css'
         },
         extensions: ['', '.webpack.js', '.web.js', '.js', '.jsx', '.css']
-    }
+    },
+    plugins: isProductionEnvironment ? [
+        new webpack.optimize.UglifyJsPlugin({
+            compress: { warnings: false }
+        })
+    ] : []
 };
