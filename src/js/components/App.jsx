@@ -80,6 +80,10 @@ class App extends React.Component {
     }
 
     createTodo(description) {
+        if (!description) {
+            return;
+        }
+
         this.state.todos.push({
             id: uuid.v1(),
             description,
