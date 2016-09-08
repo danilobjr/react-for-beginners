@@ -12,18 +12,7 @@ class App extends React.Component {
 
         this.state = {
             filter: filters.ALL,
-            todos: [
-                {
-                    id: uuid.v1(),
-                    description: 'talk to John',
-                    completed: false
-                },
-                { 
-                    id: uuid.v1(),
-                    description: 'buy some fruits',
-                    completed: true
-                }
-            ]
+            todos: []
         };
     }
 
