@@ -65,21 +65,23 @@ class App extends React.Component {
             todos.forEach(todo => todo.completed = true);
         }
 
-        this.setState({ todos: this.state.todos });
+        this.setState({ todos });
     }
 
     createTodo(description) {
+        const { todos } = this.state;
+
         if (!description) {
             return;
         }
 
-        this.state.todos.push({
+        todos.push({
             id: uuid.v1(),
             description,
             completed: false
         });
 
-        this.setState({ todos: this.state.todos });
+        this.setState({ todos });
     }
 
     completeTodo(id, completed) {
