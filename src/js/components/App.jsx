@@ -22,7 +22,7 @@ class App extends React.Component {
                 <AppHeader />
                 <ToggleAll
                     todos={this.state.todos}
-                    onClick={this.toggleAllTodosCompletion.bind(this)}
+                    onChange={this.toggleAllTodosCompletion.bind(this)}
                 />
                 <NewTodoInput onEnterDescription={this.createTodo.bind(this)} />
                 <TodoList

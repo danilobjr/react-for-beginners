@@ -10,7 +10,7 @@ const ToggleAll = props =>
         )}
         type="checkbox"
         checked={isAllTodoCompleted(props)}
-        onClick={props.onClick}
+        onChange={props.onChange}
     />
 
 const isAllTodoCompleted = props =>
