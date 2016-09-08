@@ -1,5 +1,4 @@
 export { App } from './App'
-export { AppContainer } from './AppContainer'
 export { AppHeader } from './AppHeader'
 export { ClearCompletedButton } from './ClearCompletedButton'
 export { Filters } from './Filters'

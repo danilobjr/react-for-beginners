@@ -4,7 +4,7 @@ import {
     AppHeader, ToggleAll, NewTodoInput, 
     TodoList, Footer
 } from 'components'
-import { propTypes, filters } from 'utils'
+import { filters } from 'utils'
 
 class App extends React.Component {
     constructor(props) {
@@ -12,7 +12,18 @@ class App extends React.Component {
 
         this.state = {
             filter: filters.ALL,
-            todos: props.todos
+            todos: [
+                {
+                    id: uuid.v1(),
+                    description: 'talk to John',
+                    completed: false
+                },
+                { 
+                    id: uuid.v1(),
+                    description: 'buy some fruits',
+                    completed: true
+                }
+            ]
         };
     }
 
@@ -123,10 +134,6 @@ class App extends React.Component {
         this.setState({ todos: incompleteTodos });
     }
 }
-
-App.propTypes = {
-    todos: propTypes.todosRequired
-};
 
 export {
     App
