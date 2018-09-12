@@ -1,6 +1,6 @@
 # todos
 
-To do list
+To do list.
 
 ## License
 
